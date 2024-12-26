@@ -1,0 +1,1 @@
+"This is a simple two-page website that showcases [brief description of what your website does], built using HTML and CSS. To test it out, clone this repository and open the files in your browser. Navigate through the pages to explore the content. This project is for testing purposes only."
