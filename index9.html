@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mustapha Coding Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: purple;
+            background-image: url('https://i.postimg.cc/zGFYdRdS/DALL-E-2024-12-18-20-24-56-A-stylish-abstract-black-art-background-with-smooth-gradients-subtle-t.webp'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        .screen {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+            height: 100%;
+            width: 100%;
+            backdrop-filter: brightness(0.8); /* Darken image slightly */
+        }
+
+        .screen.active {
+            display: flex;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: white;
+            color: purple;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .project-screen h1 {
+            font-size: 2rem;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div class="screen active" id="welcomeScreen">
+        <h1>Welcome to Mustapha Coding Website</h1>
+        <button onclick="continueApp()">Continue</button>
+        <button onclick="reloadPage()">Reload</button>
+        <button onclick="exitApp()">Exit</button>
+    </div>
+
+    <!-- Project Screen -->
+    <div class="screen" id="projectScreen">
+        <h1>This is the first project you made!</h1>
+        <p style="font-weight: bold;">Let's go!!!</p>
+        <button onclick="alert('Let\'s Go!')">Let's Go!!!!</button>
+    </div>
+
+    <script>
+        function continueApp() {
+            document.getElementById('welcomeScreen').classList.remove('active');
+            document.getElementById('projectScreen').classList.add('active');
+        }
+
+        function reloadPage() {
+            location.reload();
+        }
+
+        function exitApp() {
+            alert("Exiting the app...");
+            window.close(); // This might not work on most modern browsers
+        }
+    </script>
+</body>
+</html>
